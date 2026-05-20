@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prabhjot Singh — Customer Support &amp; Operations</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0d0d0d;
+      --ink-mid: #1c1c1c;
+      --ink-soft: #2e2e2e;
+      --gold: #C9A84C;
+      --gold-lt: #e0be74;
+      --cream: #fafaf8;
+      --gray-1: #f2f2ef;
+      --gray-2: #e5e5e0;
+      --gray-3: #b0b0a8;
+      --gray-4: #6b6b62;
+      --white: #ffffff;
+      --green: #22c55e;
+      --green-bg: #f0fdf4;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Sora', sans-serif;
+      background: var(--white);
+      color: var(--ink);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      background: var(--ink);
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      align-items: center;
+      padding: 80px 72px;
+      gap: 64px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 110% 60%, rgba(201, 168, 76, 0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at -10% 40%, rgba(201, 168, 76, 0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+
+    .eyebrow-line {
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .eyebrow-text {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.2rem, 6vw, 5rem);
+      font-weight: 500;
+      line-height: 1.05;
+      color: var(--white);
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-role {
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.42);
+      letter-spacing: 0.08em;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+    }
+
+    .hero-desc {
+      font-size: 0.97rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.62);
+      line-height: 1.82;
+      max-width: 500px;
+      margin-bottom: 48px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      margin-bottom: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .stat-n {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.1rem;
+      font-weight: 500;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .stat-l {
+      font-size: 0.67rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.38);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 5px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold);
+      color: var(--ink);
+      font-family: 'Sora', sans-serif;
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border-radius: 2px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-lt);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: rgba(255, 255, 255, 0.65);
+      font-family: 'Sora', sans-serif;
+      font-size: 0.74rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 13px 28px;
+      border-radius: 2px;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      transition: border-color 0.2s, color 0.2s, transform 0.15s;
+    }
+
+    .btn-ghost:hover {
+      border-color: rgba(255, 255, 255, 0.48);
+      color: var(--white);
+      transform: translateY(-1px);
+    }
+
+    /* Hero card */
+    .hero-card {
+      position: relative;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 2px;
+      padding: 36px 30px;
+    }
+
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold) 0%, transparent 100%);
+    }
+
+    .hc-avatar {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      background: rgba(201, 168, 76, 0.12);
+      border: 1px solid rgba(201, 168, 76, 0.28);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+
+    .hc-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 3px;
+    }
+
+    .hc-title {
+      font-size: 0.7rem;
+      color: rgba(255, 255, 255, 0.38);
+      letter-spacing: 0.07em;
+      margin-bottom: 26px;
+      text-transform: uppercase;
+    }
+
+    .hc-sep {
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      margin-bottom: 18px;
+    }
+
+    .hc-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.52);
+      margin-bottom: 10px;
+    }
+
+    .hc-icon {
+      color: var(--gold);
+      font-size: 0.88rem;
+    }
+
+    .hc-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 20px;
+    }
+
+    .hc-chip {
+      background: rgba(201, 168, 76, 0.09);
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      color: rgba(201, 168, 76, 0.8);
+      font-size: 0.63rem;
+      font-weight: 500;
+      letter-spacing: 0.07em;
+      padding: 4px 10px;
+      border-radius: 1px;
+      text-transform: uppercase;
+    }
+
+    /* ─── SECTION BASE ─── */
+    .section {
+      padding: 100px 72px;
+    }
+
+    .section-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .s-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .s-line {
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .s-label {
+      font-size: 0.67rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .s-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.9rem, 3.2vw, 2.7rem);
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.15;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .s-lead {
+      font-size: 0.97rem;
+      color: var(--gray-4);
+      max-width: 560px;
+      line-height: 1.82;
+      font-weight: 300;
+      margin-bottom: 60px;
+    }
+
+    /* ─── ABOUT ─── */
+    .about {
+      background: var(--cream);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .about-text p {
+      font-size: 0.94rem;
+      font-weight: 300;
+      color: var(--gray-4);
+      line-height: 1.88;
+      margin-bottom: 18px;
+    }
+
+    .about-text p strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .about-kpis {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+
+    .kpi {
+      background: var(--white);
+      padding: 28px 22px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+
+    .kpi:hover {
+      transform: translateY(-2px);
+    }
+
+    .kpi::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+
+    .kpi:hover::after {
+      transform: scaleX(1);
+    }
+
+    .kpi-n {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1;
+    }
+
+    .kpi-l {
+      font-size: 0.7rem;
+      color: var(--gray-3);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      margin-top: 6px;
+      line-height: 1.4;
+    }
+
+    /* ─── SKILLS ─── */
+    .skills {
+      background: var(--white);
+    }
+
+    .skills-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+
+    .skill-panel {
+      background: var(--cream);
+      padding: 40px;
+    }
+
+    .sp-heading {
+      font-size: 0.67rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray-3);
+      margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--gray-2);
+    }
+
+    .sp-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .sp-tag {
+      background: var(--white);
+      border: 1px solid var(--gray-2);
+      color: var(--gray-4);
+      font-size: 0.78rem;
+      font-weight: 400;
+      padding: 8px 16px;
+      border-radius: 1px;
+      transition: all 0.2s;
+      cursor: default;
+    }
+
+    .sp-tag:hover {
+      background: var(--ink);
+      border-color: var(--ink);
+      color: var(--white);
+      transform: translateY(-1px);
+    }
+
+    /* ─── EXPERIENCE ─── */
+    .experience {
+      background: var(--cream);
+    }
+
+    .exp-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .exp-item {
+      background: var(--white);
+      display: grid;
+      grid-template-columns: 220px 1fr;
+    }
+
+    .exp-sidebar {
+      padding: 36px 28px;
+      background: var(--gray-1);
+      border-right: 1px solid var(--gray-2);
+    }
+
+    .exp-current-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      margin-bottom: 14px;
+      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.18);
+    }
+
+    .exp-period {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--gray-3);
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+
+    .exp-company {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.4;
+    }
+
+    .exp-place {
+      font-size: 0.7rem;
+      color: var(--gray-3);
+      margin-top: 4px;
+    }
+
+    .exp-body {
+      padding: 36px 40px;
+    }
+
+    .exp-role-row {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 5px;
+      flex-wrap: wrap;
+    }
+
+    .exp-role {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.18rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .exp-badge {
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 20px;
+    }
+
+    .badge-current {
+      background: var(--green-bg);
+      color: #15803d;
+      border: 1px solid #bbf7d0;
+    }
+
+    .badge-finance {
+      background: #fef9ec;
+      color: #92400e;
+      border: 1px solid #fde68a;
+    }
+
+    .exp-type {
+      font-size: 0.72rem;
+      color: var(--gray-3);
+      margin-bottom: 20px;
+      font-weight: 400;
+    }
+
+    .exp-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 22px;
+    }
+
+    .exp-pill {
+      background: var(--gray-1);
+      border: 1px solid var(--gray-2);
+      color: var(--ink);
+      font-size: 0.68rem;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    .exp-bullets {
+      list-style: none;
+    }
+
+    .exp-bullets li {
+      font-size: 0.86rem;
+      color: var(--gray-4);
+      font-weight: 300;
+      line-height: 1.72;
+      padding: 5px 0 5px 18px;
+      position: relative;
+    }
+
+    .exp-bullets li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 13px;
+      width: 6px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    /* ─── WHY BANKING ─── */
+    .banking {
+      background: var(--ink);
+    }
+
+    .banking .s-title {
+      color: var(--white);
+    }
+
+    .banking .s-lead {
+      color: rgba(255, 255, 255, 0.42);
+    }
+
+    .banking-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .bc {
+      background: rgba(255, 255, 255, 0.028);
+      border: 1px solid rgba(255, 255, 255, 0.055);
+      padding: 32px 26px;
+      transition: background 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bc:hover {
+      background: rgba(255, 255, 255, 0.052);
+    }
+
+    .bc::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .bc:hover::before {
+      opacity: 1;
+    }
+
+    .bc-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 400;
+      color: rgba(201, 168, 76, 0.13);
+      line-height: 1;
+      margin-bottom: 16px;
+      user-select: none;
+    }
+
+    .bc-title {
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.82);
+      margin-bottom: 12px;
+      letter-spacing: 0.01em;
+    }
+
+    .bc-text {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.42);
+      line-height: 1.72;
+      font-weight: 300;
+    }
+
+    /* ─── CERTS ─── */
+    .certs {
+      background: var(--white);
+    }
+
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .cert {
+      background: var(--cream);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: transform 0.2s;
+    }
+
+    .cert:hover {
+      transform: translateY(-2px);
+    }
+
+    .cert-issuer {
+      font-size: 0.63rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-3);
+    }
+
+    .cert-name {
+      font-size: 0.87rem;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.45;
+      flex: 1;
+    }
+
+    .cert-pill {
+      display: inline-block;
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 1px;
+      align-self: flex-start;
+    }
+
+    .cp-done {
+      background: #f0fdf4;
+      color: #15803d;
+      border: 1px solid #bbf7d0;
+    }
+
+    .cp-go {
+      background: #fef9ec;
+      color: #92400e;
+      border: 1px solid #fde68a;
+    }
+
+    .cp-plan {
+      background: var(--gray-1);
+      color: var(--gray-4);
+      border: 1px solid var(--gray-2);
+    }
+
+    /* ─── CONTACT ─── */
+    .contact {
+      background: var(--cream);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .ci-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .ci-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      background: var(--white);
+      padding: 20px 22px;
+    }
+
+    .ci-dot {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+      background: var(--ink);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      color: var(--gold);
+    }
+
+    .ci-lbl {
+      font-size: 0.63rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-3);
+    }
+
+    .ci-val {
+      font-size: 0.84rem;
+      color: var(--ink);
+      margin-top: 3px;
+    }
+
+    .cform {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .fg {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .fl {
+      font-size: 0.66rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-4);
+    }
+
+    .fi,
+    .ft {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--gray-2);
+      border-radius: 2px;
+      font-family: 'Sora', sans-serif;
+      font-size: 0.88rem;
+      color: var(--ink);
+      background: var(--white);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .fi:focus,
+    .ft:focus {
+      border-color: var(--gold);
+    }
+
+    .ft {
+      height: 128px;
+      resize: vertical;
+    }
+
+    .btn-send {
+      background: var(--ink);
+      color: var(--white);
+      font-family: 'Sora', sans-serif;
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      border-radius: 2px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      align-self: flex-start;
+    }
+
+    .btn-send:hover {
+      background: var(--ink-soft);
+      transform: translateY(-1px);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--ink-mid);
+      padding: 36px 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .foot-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      color: var(--white);
+      font-weight: 400;
+    }
+
+    .foot-copy {
+      font-size: 0.7rem;
+      color: rgba(255, 255, 255, 0.22);
+      margin-top: 5px;
+    }
+
+    .foot-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .foot-links a {
+      font-size: 0.68rem;
+      color: rgba(255, 255, 255, 0.38);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .foot-links a:hover {
+      color: var(--gold);
+    }
+
+    /* ─── ANIMATIONS ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 960px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 80px 36px;
+        gap: 48px;
+      }
+
+      .hero-card {
+        max-width: 400px;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .banking-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .certs-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .exp-item {
+        grid-template-columns: 1fr;
+      }
+
+      .exp-sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--gray-2);
+      }
+
+      .section {
+        padding: 72px 36px;
+      }
+
+      footer {
+        padding: 32px 36px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding: 60px 22px;
+      }
+
+      .section {
+        padding: 60px 22px;
+      }
+
+      .hero-stats {
+        gap: 28px;
+      }
+
+      .about-kpis {
+        grid-template-columns: 1fr;
+      }
+
+      .banking-grid,
+      .certs-grid {
+        grid-template-columns: 1fr;
+      }
+
+      footer {
+        padding: 28px 22px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ══════════════ HERO ══════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="eyebrow-line"></span>
+        <span class="eyebrow-text">Open to Opportunities &nbsp;·&nbsp; Toronto, Ontario</span>
+      </div>
+
+      <h1>Prabhjot<br><em>Singh</em></h1>
+      <p class="hero-role">Customer Support &amp; Operations &nbsp;/&nbsp; Aspiring Banking Professional</p>
+
+      <p class="hero-desc">
+        4+ years building operational excellence and client-first support across financial services,
+        distribution, and construction. Now bringing that foundation into corporate banking and financial services full
+        time.
+      </p>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-n">95%</div>
+          <div class="stat-l">First Contact Resolution</div>
+        </div>
+        <div class="stat">
+          <div class="stat-n">30+</div>
+          <div class="stat-l">Daily Support Tickets</div>
+        </div>
+        <div class="stat">
+          <div class="stat-n">100%</div>
+          <div class="stat-l">Policy Compliance</div>
+        </div>
+      </div>
+
+      <div class="hero-btns">
+        <a href="mailto:prabhjotharike@gmail.com" class="btn-gold">✉ &nbsp;Get In Touch</a>
+        <a href="https://www.linkedin.com/in/prabhjot-harike-170a8319a" target="_blank" class="btn-ghost">↗
+          &nbsp;LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <div class="hc-avatar">PS</div>
+      <div class="hc-name">Prabhjot Singh</div>
+      <div class="hc-title">Customer Support Advisor</div>
+      <hr class="hc-sep" />
+      <div class="hc-row"><span class="hc-icon">📍</span> Toronto, Ontario, Canada</div>
+      <div class="hc-row"><span class="hc-icon">📞</span> (647) 896-3505</div>
+      <div class="hc-row"><span class="hc-icon">✉</span> prabhjotharike@gmail.com</div>
+      <div class="hc-chips">
+        <span class="hc-chip">Salesforce</span>
+        <span class="hc-chip">Zendesk</span>
+        <span class="hc-chip">Excel</span>
+        <span class="hc-chip">CRM</span>
+        <span class="hc-chip">Finance</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ ABOUT ══════════════ -->
+  <section class="section about" id="about">
+    <div class="section-inner">
+      <div class="s-eyebrow"><span class="s-line"></span><span class="s-label">Professional Summary</span></div>
+      <h2 class="s-title">Operationally Sharp.<br>Client-Focused. Finance-Ready.</h2>
+
+      <div class="about-grid reveal">
+        <div class="about-text">
+          <p>With four-plus years spanning <strong>financial services, manufacturing, distribution, and construction
+              operations</strong>, I have built a foundation grounded in precision, accountability, and customer-first
+            thinking.</p>
+          <p>At Ava Finance, I advise clients daily on credit improvement and account services, handling sensitive
+            financial information while meeting strict compliance and confidentiality standards. At Brokerhouse
+            Distribution, I managed 30+ daily support tickets while maintaining 95% first-contact resolution, and
+            partnered with engineering teams to eliminate recurring equipment issues at the root.</p>
+          <p>My move into corporate banking is intentional. The skills that power great support (accuracy under
+            pressure, client empathy, compliance awareness, structured problem-solving) are the skills that banking
+            institutions need most in client-facing and operations roles.</p>
+        </div>
+        <div class="about-kpis">
+          <div class="kpi">
+            <div class="kpi-n">4+</div>
+            <div class="kpi-l">Years Operations and Support Experience</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-n">Finance</div>
+            <div class="kpi-l">Currently Advising Clients at Ava Finance</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-n">95%</div>
+            <div class="kpi-l">First-Contact Resolution Rate</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-n">12+</div>
+            <div class="kpi-l">Employees Trained and Onboarded</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ SKILLS ══════════════ -->
+  <section class="section skills" id="skills">
+    <div class="section-inner">
+      <div class="s-eyebrow"><span class="s-line"></span><span class="s-label">Core Competencies</span></div>
+      <h2 class="s-title">Skills &amp; Capabilities</h2>
+      <p class="s-lead">A dual-track skill set combining technical support systems with the operational and
+        interpersonal capabilities valued in financial services.</p>
+
+      <div class="skills-wrap reveal">
+        <div class="skill-panel">
+          <div class="sp-heading">Technical and Systems</div>
+          <div class="sp-tags">
+            <span class="sp-tag">Microsoft Excel</span>
+            <span class="sp-tag">Salesforce CRM</span>
+            <span class="sp-tag">Zendesk</span>
+            <span class="sp-tag">Microsoft 365</span>
+            <span class="sp-tag">CRM Systems</span>
+            <span class="sp-tag">Networking Fundamentals</span>
+            <span class="sp-tag">Technical Troubleshooting</span>
+            <span class="sp-tag">Reporting and Documentation</span>
+            <span class="sp-tag">Incident Tracking</span>
+            <span class="sp-tag">Root Cause Analysis</span>
+          </div>
+        </div>
+        <div class="skill-panel">
+          <div class="sp-heading">Operations and Banking-Adjacent</div>
+          <div class="sp-tags">
+            <span class="sp-tag">Customer Service</span>
+            <span class="sp-tag">Credit and Account Support</span>
+            <span class="sp-tag">Escalation Handling</span>
+            <span class="sp-tag">Compliance Awareness</span>
+            <span class="sp-tag">Data Accuracy</span>
+            <span class="sp-tag">Team Collaboration</span>
+            <span class="sp-tag">Written Communication</span>
+            <span class="sp-tag">Time Management</span>
+            <span class="sp-tag">Workflow Coordination</span>
+            <span class="sp-tag">Issue Prioritization</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ EXPERIENCE ══════════════ -->
+  <section class="section experience" id="experience">
+    <div class="section-inner">
+      <div class="s-eyebrow"><span class="s-line"></span><span class="s-label">Career History</span></div>
+      <h2 class="s-title">Professional Experience</h2>
+      <p class="s-lead">Results-driven roles across financial services, operations, and team leadership, each building
+        toward a structured career in banking and finance.</p>
+
+      <div class="exp-list reveal">
+
+        <!-- AVA FINANCE -->
+        <div class="exp-item">
+          <div class="exp-sidebar">
+            <div class="exp-current-dot"></div>
+            <div class="exp-period">2025 — Present</div>
+            <div class="exp-company">Ava Finance</div>
+            <div class="exp-place">Toronto, ON</div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-role-row">
+              <div class="exp-role">Customer Support Advisor</div>
+              <span class="exp-badge badge-current">Current</span>
+              <span class="exp-badge badge-finance">Financial Services</span>
+            </div>
+            <div class="exp-type">Full-Time</div>
+            <ul class="exp-bullets">
+              <li>Assist clients with account inquiries, credit improvement services, payment questions, and general
+                financial support in a regulated environment.</li>
+              <li>Resolve customer concerns efficiently while maintaining high standards of professionalism, empathy,
+                and service quality in a fast-paced setting.</li>
+              <li>Manage high volumes of inbound and outbound interactions through phone, email, and chat while meeting
+                response time and satisfaction targets.</li>
+              <li>Educate clients on credit score improvement processes, account services, and financial solutions to
+                enhance understanding and retention.</li>
+              <li>Maintain accurate customer records, case updates, and interaction notes using CRM and support
+                platforms.</li>
+              <li>Handle sensitive customer information in strict adherence to company policies, confidentiality
+                standards, and compliance procedures.</li>
+              <li>Collaborate with internal teams to ensure timely issue resolution and smooth end-to-end customer
+                experiences.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- HARIKE CONSTRUCTION -->
+        <div class="exp-item">
+          <div class="exp-sidebar">
+            <div class="exp-period">Jan 2025 — Present</div>
+            <div class="exp-company">Harike Construction Co.</div>
+            <div class="exp-place">Toronto, ON</div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-role-row">
+              <div class="exp-role">Business Operations Coordinator</div>
+            </div>
+            <div class="exp-type">Part-Time &nbsp;·&nbsp; 15 to 20 hrs/week</div>
+            <div class="exp-pills">
+              <span class="exp-pill">20+ requests/week</span>
+              <span class="exp-pill">3 to 4 active job sites</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Manage 20+ weekly service and operational requests across 3 to 4 concurrent active job sites, ensuring
+                nothing falls through the cracks.</li>
+              <li>Coordinate scheduling and field-to-client communications, proactively identifying delays before they
+                escalate.</li>
+              <li>Maintain structured Excel logs for work orders, materials, and incident reports used in weekly project
+                reviews.</li>
+              <li>Serve as primary client contact, resolving inquiries within authorization and escalating only when
+                appropriate.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- BROKERHOUSE -->
+        <div class="exp-item">
+          <div class="exp-sidebar">
+            <div class="exp-period">Jun 2024 — Mar 2026</div>
+            <div class="exp-company">Brokerhouse Distribution Inc.</div>
+            <div class="exp-place">Etobicoke, ON</div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-role-row">
+              <div class="exp-role">Customer Support &amp; Service Technician</div>
+            </div>
+            <div class="exp-type">Full-Time</div>
+            <div class="exp-pills">
+              <span class="exp-pill">30+ tickets/day</span>
+              <span class="exp-pill">95% first-contact resolution</span>
+              <span class="exp-pill">4 hrs downtime saved/week</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Closed 30+ daily support tickets via phone and email covering orders, returns, and equipment issues
+                while maintaining 95% first-contact resolution.</li>
+              <li>Diagnosed and resolved equipment issues, reducing line downtime by approximately 4 hours per week
+                based on escalation logs.</li>
+              <li>Partnered with manufacturer software teams to address recurring equipment bugs, eliminating root
+                causes and preventing repeat complaints.</li>
+              <li>Tracked and closed all service tickets in Salesforce and Zendesk with thorough follow-up and
+                resolution documentation.</li>
+              <li>Drove down repeat service issues by coordinating cross-functional fixes across engineering, warehouse,
+                and support teams.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- DECOR REST -->
+        <div class="exp-item">
+          <div class="exp-sidebar">
+            <div class="exp-period">Nov 2021 — Apr 2024</div>
+            <div class="exp-company">Decor Rest</div>
+            <div class="exp-place">Vaughan, ON</div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-role-row">
+              <div class="exp-role">Team Lead, Operations &amp; Customer Support</div>
+            </div>
+            <div class="exp-type">Full-Time</div>
+            <div class="exp-pills">
+              <span class="exp-pill">5 to 8 direct reports</span>
+              <span class="exp-pill">12+ hires trained</span>
+              <span class="exp-pill">Zero missed weekly targets</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Supervised 5 to 8 employees across production and customer support, meeting weekly work order targets
+                without exception over nearly 3 years.</li>
+              <li>Trained and onboarded 12+ new hires, reducing ramp-up time from 6 weeks to 3 weeks through structured
+                onboarding processes.</li>
+              <li>De-escalated 15 to 20 weekly customer issues during peak periods, resolving approximately 90% without
+                requiring management involvement.</li>
+              <li>Stepped back intentionally to build deeper technical skills, a decision that directly enabled the
+                diagnostic and CRM expertise developed at Brokerhouse and Ava Finance.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ WHY BANKING ══════════════ -->
+  <section class="section banking" id="banking">
+    <div class="section-inner">
+      <div class="s-eyebrow"><span class="s-line"></span><span class="s-label">Career Direction</span></div>
+      <h2 class="s-title">Why Banking &amp;<br>Financial Services?</h2>
+      <p class="s-lead">This is not a pivot. It is a progression. Every skill built in operations and support maps
+        directly to what modern financial institutions need.</p>
+
+      <div class="banking-grid reveal">
+        <div class="bc">
+          <div class="bc-num">01</div>
+          <div class="bc-title">Already in Financial Services</div>
+          <div class="bc-text">At Ava Finance I support clients with credit, accounts, and payments daily, working
+            within compliance frameworks and handling sensitive financial information. The transition is already
+            underway.</div>
+        </div>
+        <div class="bc">
+          <div class="bc-num">02</div>
+          <div class="bc-title">Client-Centred by Nature</div>
+          <div class="bc-text">Years of resolving complex customer issues under pressure have built a deep instinct for
+            client empathy, clear communication, and confidence in high-stakes interactions, qualities central to retail
+            and commercial banking.</div>
+        </div>
+        <div class="bc">
+          <div class="bc-num">03</div>
+          <div class="bc-title">Operations as a Foundation</div>
+          <div class="bc-text">Banking is operations-intensive. My background in workflow coordination, ticket triage,
+            SLA management, and cross-functional collaboration translates directly to branch operations and back-office
+            service delivery.</div>
+        </div>
+        <div class="bc">
+          <div class="bc-num">04</div>
+          <div class="bc-title">Precision and Data Accuracy</div>
+          <div class="bc-text">From Excel reporting to CRM documentation, I have always operated where accuracy is
+            non-negotiable. That precision-first mindset is exactly what financial data entry, reporting, and compliance
+            tasks demand.</div>
+        </div>
+        <div class="bc">
+          <div class="bc-num">05</div>
+          <div class="bc-title">Compliance-Aware</div>
+          <div class="bc-text">Operating within authorization thresholds, escalating appropriately, and maintaining
+            documentation are habits I built in support roles. These are the same habits that underpin sound compliance
+            and risk management in finance.</div>
+        </div>
+        <div class="bc">
+          <div class="bc-num">06</div>
+          <div class="bc-title">Actively Investing in the Field</div>
+          <div class="bc-text">Pursuing the CSC and AML Fundamentals to complement my operational experience with formal
+            financial knowledge, bringing both the credentials and the day-one capability that financial institutions
+            value.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ CERTIFICATIONS ══════════════ -->
+  <section class="section certs" id="certifications">
+    <div class="section-inner">
+      <div class="s-eyebrow"><span class="s-line"></span><span class="s-label">Credentials</span></div>
+      <h2 class="s-title">Education &amp; Certifications</h2>
+      <p class="s-lead">A technical academic foundation combined with targeted professional development aligned to
+        financial services.</p>
+
+      <div class="certs-grid reveal">
+        <div class="cert">
+          <div class="cert-issuer">St. Lawrence College</div>
+          <div class="cert-name">Diploma in Computer Networking &amp; Technical Support (2-Year)</div>
+          <span class="cert-pill cp-done">Completed 2022</span>
+        </div>
+        <div class="cert">
+          <div class="cert-issuer">Microsoft</div>
+          <div class="cert-name">Microsoft 365 Fundamentals / Office Specialist</div>
+          <span class="cert-pill cp-go">Pursuing</span>
+        </div>
+
+        <div class="cert">
+          <div class="cert-issuer">LinkedIn Learning</div>
+          <div class="cert-name">Excel for Business, CRM Fundamentals &amp; Business Communication</div>
+          <span class="cert-pill cp-go">Pursuing</span>
+        </div>
+        <div class="cert">
+          <div class="cert-issuer">CSI — Canadian Securities Institute</div>
+          <div class="cert-name">Canadian Securities Course (CSC)</div>
+          <span class="cert-pill cp-plan">Planned</span>
+        </div>
+        <div class="cert">
+          <div class="cert-issuer">FINTRAC / ACAMS</div>
+          <div class="cert-name">Anti-Money Laundering (AML) Basics</div>
+          <span class="cert-pill cp-plan">Planned</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ CONTACT ══════════════ -->
+  <section class="section contact" id="contact">
+    <div class="section-inner">
+      <div class="s-eyebrow"><span class="s-line"></span><span class="s-label">Get In Touch</span></div>
+      <h2 class="s-title">Let's Connect</h2>
+      <p class="s-lead">Whether you are a recruiter, hiring manager, or industry professional, I would welcome the
+        opportunity to connect.</p>
+
+      <div class="contact-grid reveal">
+        <div class="ci-list">
+          <div class="ci-item">
+            <div class="ci-dot">✉</div>
+            <div>
+              <div class="ci-lbl">Email</div>
+              <div class="ci-val">prabhjotharike@gmail.com</div>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-dot">📞</div>
+            <div>
+              <div class="ci-lbl">Phone</div>
+              <div class="ci-val">(647) 896-3505</div>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-dot">🔗</div>
+            <div>
+              <div class="ci-lbl">LinkedIn</div>
+              <div class="ci-val">linkedin.com/in/prabhjot-harike-170a8319a</div>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-dot">📍</div>
+            <div>
+              <div class="ci-lbl">Location</div>
+              <div class="ci-val">Toronto, Ontario — Open to GTA Opportunities</div>
+            </div>
+          </div>
+        </div>
+
+        <form class="cform" action="https://formspree.io/f/mbdbdqzo" method="POST">
+
+          <div class="fg">
+            <label class="fl">Your Name</label>
+            <input class="fi" type="text" name="name" placeholder="Warren Buffett" required />
+          </div>
+
+          <div class="fg">
+            <label class="fl">Your Email</label>
+            <input class="fi" type="email" name="email" placeholder="warren.buffett@company.com" required />
+          </div>
+
+          <div class="fg">
+            <label class="fl">Message</label>
+            <textarea class="ft" name="message" placeholder="I'd like to connect regarding..." required></textarea>
+          </div>
+
+          <button class="btn-send" type="submit">
+            Send Message →
+          </button>
+
+        </form>
+
+        <!-- ══════════════ FOOTER ══════════════ -->
+        <footer>
+          <div>
+            <div class="foot-name">Prabhjot Singh</div>
+            <div class="foot-copy">© 2026 All rights reserved.</div>
+          </div>
+          <div class="foot-links">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#banking">Why Banking</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </footer>
+
+        <script>
+          const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+          }, { threshold: 0.1 });
+          document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+        </script>
+</body>
+
+</html>
